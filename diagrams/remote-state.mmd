@@ -1,0 +1,6 @@
+flowchart LR
+  A[Operator or CI] --> B[Terraform CLI]
+  B --> C[Backend authentication]
+  C --> D[Remote state storage]
+  B --> E[Lock acquire and release]
+  B --> F[Provider APIs]

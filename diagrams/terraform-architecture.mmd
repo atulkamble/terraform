@@ -1,0 +1,7 @@
+flowchart LR
+  A[HCL configuration] --> B[Terraform CLI]
+  B --> C[Dependency graph and plan]
+  C --> D[Provider plugin]
+  D --> E[Cloud or service API]
+  B <--> F[State backend]
+  E --> G[Managed resources]

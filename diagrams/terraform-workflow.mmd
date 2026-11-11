@@ -1,0 +1,8 @@
+flowchart TD
+  A[Edit configuration] --> B[terraform init]
+  B --> C[terraform fmt and validate]
+  C --> D[terraform plan]
+  D --> E{Review proposed changes}
+  E -->|Accept| F[terraform apply]
+  E -->|Revise| A
+  F --> G[terraform destroy when lab ends]
