@@ -1,3 +1,14 @@
+```
+git clone https://github.com/atulkamble/terraform.git
+cd terraform/labs/01-local-file
+terraform init 
+terraform plan
+terraform apply
+cat terraform-lab.txt
+terraform destroy
+```
+
+
 # Terraform Fundamentals — Training Repository
 
 Hands-on course material for Infrastructure as Code, Terraform fundamentals, cloud providers, variables, outputs, state management, and collaboration.
