@@ -1,17 +1,6 @@
-## Import an existing AWS EC2 instance
+Use **US East (N. Virginia)** (`us-east-1`) and `t3.micro`. Replace the example instance ID with the ID of the EC2 instance you want to import.
 
-This uses the current AWS provider version and the classic `terraform import` command. Replace the example region and instance ID with yours.
-
-### 1. Get your instance ID
-
-```bash
-aws ec2 describe-instances \
-  --region ap-south-1 \
-  --query 'Reservations[].Instances[].[InstanceId,State.Name]' \
-  --output table
-```
-
-### 2. Create `main.tf`
+### `main.tf`
 
 ```hcl
 terraform {
@@ -24,28 +13,22 @@ terraform {
 }
 
 provider "aws" {
-  region = "ap-south-1"
+  region = "us-east-1"
 }
 
-resource "aws_instance" "practice" {}
+resource "aws_instance" "practice" {
+  ami           = "ami-096ef200a877f36af"
+  instance_type = "t3.micro"
+}
 ```
 
-### 3. Initialize and import
+### Run the import
 
 ```bash
 terraform init
-terraform import aws_instance.practice i-0123456789abcdef0
-```
-
-The address `aws_instance.practice` must match the resource block. The ID is the EC2 instance ID.
-
-### 4. Inspect and finish
-
-```bash
+terraform import aws_instance.practice i-REPLACE_WITH_YOUR_INSTANCE_ID
 terraform state show aws_instance.practice
 terraform plan
 ```
 
-Use the state output to fill in the resource settings in `main.tf`. Review the plan and adjust the configuration until it shows no unintended changes. Don’t apply until the plan is safe.
-
-The import command records the instance in Terraform state; it does not generate the full configuration. 
+The AMI and instance type must match the existing instance. Review `terraform plan` and complete `main.tf` with any additional settings it reports before applying changes. Import adds the existing instance to Terraform state; it does not create the instance.
