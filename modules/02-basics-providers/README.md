@@ -80,17 +80,17 @@ This lab does not need a cloud account and does not create cloud resources.
 
 ~~~bash
 git clone https://github.com/atulkamble/terraform.git
-cd terraform/labs/01-local-file
+cd terraform/labs/local
 terraform init
 terraform fmt
 terraform validate
 terraform plan
 terraform apply
-cat terraform-lab.txt
+cat example.txt
 terraform destroy
 ~~~
 
-At the apply prompt, inspect the plan and type yes to proceed. PowerShell instructions are in the lab README. If the shown path is not present in your checkout, use the repository's current local-file lab directory and its README.
+At the apply prompt, inspect the plan and type yes to proceed. PowerShell instructions are in the lab README. The repository lab is labs/local; see its README for the matching commands.
 
 ### What each command does
 
