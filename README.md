@@ -1,10 +1,10 @@
 ```
 git clone https://github.com/atulkamble/terraform.git
-cd terraform/labs/01-local-file
+cd terraform/labs/local
 terraform init 
 terraform plan
 terraform apply
-cat terraform-lab.txt
+cat example.txt
 terraform destroy
 ```
 
@@ -43,13 +43,13 @@ terraform/
 │   ├── 01-introduction/
 │   ├── 02-basics-providers/{aws,azure,gcp}/
 │   └── 03-variables-state-best-practices/{local-state,aws-s3-backend}/
-└── labs/01-local-file/
+└── labs/local/
 ```
 
 ## Quick start: local lab, no cloud account needed
 
 ```bash
-cd labs/01-local-file
+cd labs/local
 terraform init
 terraform fmt -check
 terraform validate
