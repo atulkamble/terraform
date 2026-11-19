@@ -5,28 +5,28 @@ This lab creates a local file using the HashiCorp local provider. It requires no
 ## Linux and macOS
 
 ```bash
-cd labs/01-local-file
+cd labs/local
 terraform init
 terraform fmt
 terraform validate
 terraform plan
 terraform apply
 terraform output
-cat terraform-lab.txt
+cat example.txt
 terraform destroy
 ```
 
 ## Windows PowerShell
 
 ```powershell
-Set-Location labs/01-local-file
+Set-Location labs/local
 terraform init
 terraform fmt
 terraform validate
 terraform plan
 terraform apply
 terraform output
-Get-Content .\terraform-lab.txt
+Get-Content .\example.txt
 terraform destroy
 ```
 
